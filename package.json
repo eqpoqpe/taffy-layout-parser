@@ -1,0 +1,12 @@
+{
+    "name": "taffy-layout-parser",
+    "version": "0.0.2",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ryan Martin",
+    "license": "MIT"
+  }
