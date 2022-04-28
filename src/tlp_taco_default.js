@@ -24,6 +24,7 @@
 // 7 -> after
 // 8 -> fetch
 // 9 -> for
+// 12 -> change
 
 // when data is updated,
 // compare it to the prev data,
@@ -104,5 +105,11 @@ export default tlp_TACO_DEFAULT_CODES = Object.create({}, {
     enumerable: false,
     configurable: false,
     writable: false
-  }
+  },
+  "change": {
+    value: 12,
+    enumerable: false,
+    configurable: false,
+    writable: false
+  },
 });
