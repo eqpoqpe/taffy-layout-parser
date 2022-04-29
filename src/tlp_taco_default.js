@@ -17,14 +17,16 @@
 // 1 -> class
 // 2 -> inherit
 // 3 -> write
+// 9 -> for
+// 12 -> change
 // Not Usually
 // 4 -> once
 // 5 -> read
+
+// the default behavior
 // 6 -> before
 // 7 -> after
 // 8 -> fetch
-// 9 -> for
-// 12 -> change
 
 // when data is updated,
 // compare it to the prev data,
