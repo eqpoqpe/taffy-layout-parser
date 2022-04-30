@@ -18,6 +18,7 @@
 // 2 -> inherit
 // 3 -> write
 // 9 -> for
+// 13 -> props | 14 -> expose
 // 12 -> change
 // Not Usually
 // 4 -> once
