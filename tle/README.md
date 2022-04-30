@@ -1,5 +1,4 @@
-# Layout Parser (Taffy) 🍬
-
+## Taffy Layout Element
 // Usually
 // 0 -> global
 // 1 -> class
