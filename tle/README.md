@@ -2,7 +2,7 @@
 
 **Usually**
 
-0 -> global
+0 -> global | outlier
 
 1 -> class
 
