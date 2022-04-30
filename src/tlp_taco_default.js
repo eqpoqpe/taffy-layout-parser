@@ -15,6 +15,9 @@
 // Usually
 // 0 -> global
 // 1 -> class
+
+// sub-components only read the property of declares from parents
+// if data, only-read the value
 // 2 -> inherit
 // 3 -> write
 // 9 -> for

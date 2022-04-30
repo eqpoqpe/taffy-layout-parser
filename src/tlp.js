@@ -20,19 +20,3 @@
 // Event
 // Data
 
-/**
- * string to number
- * 
- * @author Ryan Martin
- * @param {TLElement} o 
- */
-function TLE_MARKER(o) {
-  const c = Object.create(Template);
-
-  if (typeof o === "object") {
-    const cp = Object.create({}, o);
-
-    const keys = Object.keys(cp);
-  }
-}
-
