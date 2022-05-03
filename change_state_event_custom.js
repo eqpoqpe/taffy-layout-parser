@@ -1,5 +1,5 @@
 /**
- * change_state_event_example.js - taffy-layout-parser
+ * change_state_event_custom.js - taffy-layout-parser
  */
 
 /**
