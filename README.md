@@ -1,29 +1,36 @@
 # Layout Parser (Taffy) 🍬
+## Usually
+`0 -> global`
 
-// Usually
-// 0 -> global
-// 1 -> class
+`1 -> class`
 
-// sub-components only read the property of declares from parents
-// if data, only-read the value
-// 2 -> inherit
-// 3 -> write
-// 9 -> for
-// 13 -> props | 14 -> expose
-// 12 -> change
-// Not Usually
-// 4 -> once
-// 5 -> read
+ `2 -> inherit`
+ >  sub-components only read the property of declares from parents,<br>
+ >  if data only for read
 
-// the default behavior
-// 6 -> before
-// 7 -> after
-// 8 -> fetch
+ `3 -> write`
+ 
+ `9 -> for`
+ 
+ `13 -> props | 14 -> expose`
+ 
+ `12 -> change`
+ 
+## Not Usually
+`4 -> once`
 
-// when data is updated,
-// compare it to the prev data,
-// and if the value is equal,
-// components that reference this value will not be re-rendered
-// 10 -> state
-// 11 -> scope
+`5 -> read`
+
+`6 -> before`
+
+`7 -> after`
+
+`8 -> fetch`
+
+`10 -> state`
+> compare it to the prev data,<br>
+> and if the value is equal (uses the [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#description))<br>
+> components that reference this value shouldn't re-rendered
+
+`11 -> scope`
 
