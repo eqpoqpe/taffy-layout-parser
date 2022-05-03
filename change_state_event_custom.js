@@ -11,8 +11,6 @@
 const changeEvent = new Event('change');
 const page = document.createElement('div');
 
-page.dispatchEvent(changeEvent);
-
 document.body.appendChild(page);
 
 const event_buck = {
