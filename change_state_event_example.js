@@ -4,6 +4,6 @@
 
 /**
  * [Proxy] - [dispatchEvent]
- *    |     /
- *   [Element]
+ *    |    /
+ *  [Element]
  */
