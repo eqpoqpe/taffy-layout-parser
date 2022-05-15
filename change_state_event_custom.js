@@ -8,7 +8,7 @@
  *  [Element]
  */
 
-const changeEvent = new Event('change');
+const stateEvent = new Event('stateChange');
 const page = document.createElement('div');
 
 document.body.appendChild(page);
@@ -34,7 +34,7 @@ const state = new Proxy(
           t[k] = _value;
           if (k === event_buck.listen) {
             event_buck.buck.forEach((el) => {
-              el.dispatchEvent(changeEvent);
+              el.dispatchEvent(stateEvent);
             });
           }
         }
@@ -43,7 +43,7 @@ const state = new Proxy(
   }
 );
 
-page.addEventListener('change', () => {
+page.addEventListener('stateChange', () => {
   console.log('DONE');
 });
 
