@@ -10,6 +10,40 @@
 
 export default function naivePresent() {
   return {
+    onData: {
+      create(s) {
+        const _that = this[s] = null;
+        this[`set${s}`] = function(sp) {
+          if (typeof sp === "function") {
+            _that = sp(_that);
+          } else {
+            _that = sp;
+          }
+        };
+
+        return {
+
+          /**
+           * 
+           * @param {*} s 
+           */
+          value(s) {
+            _that = s;
+
+            return this;
+          },
+          state() {
+            return this;
+          },
+
+          /**
+           * 
+           * @param {Function} p 
+           */
+          effect(p) {}
+        }
+      }
+    },
     onEvent: {
 
       /**

@@ -1,5 +1,5 @@
 /**
- * default.js - taffy_layout_parser
+ * tlp_taco_default.js - taffy_layout_parser
  * 
  *  _______       _____ ____
  * |__   __|/\   / ____/ __ \
@@ -9,14 +9,9 @@
  *    |_/_/    \_\_____\____/
  *
  * Behavior Up Normally Code Defined Here
+ * Working with pepper
  */
 
-
-// synthetic events not here
-// just need to write correctly
-// 'click' 'wheel' 'scroll'
-// tle event declare, add '!' at the beginning
-// '!click' '!wheel' '!scroll'
 export default TLP_TACO_DEFAULT_CODES = Object.create({}, {
   "global": {
     value: 0,
@@ -92,18 +87,6 @@ export default TLP_TACO_DEFAULT_CODES = Object.create({}, {
   },
   "change": {
     value: 12,
-    enumerable: false,
-    configurable: false,
-    writable: false
-  },
-  "provider": {
-    value: 13,
-    enumerable: false,
-    configurable: false,
-    writable: false
-  },
-  "consumer": {
-    value: 14,
     enumerable: false,
     configurable: false,
     writable: false
