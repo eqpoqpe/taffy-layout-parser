@@ -41,7 +41,7 @@
 `11 -> scope`
 
 ## Examples
-Taffy's style and Fifi's style.
+Taffy's style and Fifi style.
 
 **Memoization**
 
