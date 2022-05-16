@@ -1,4 +1,6 @@
-## Usually
+## Behavior Up
+**Usually**
+
 `0 -> global`
 
 `1 -> class`
@@ -25,7 +27,7 @@
  
 `14 -> consumer`
  
-## Not Usually
+**Not Usually**
 `4 -> once`
 
 `5 -> read`
@@ -38,3 +40,33 @@
 
 `11 -> scope`
 
+## Examples
+Taffy's style and Fifi's style.
+
+**Memoization**
+
+```js
+import { Layout, Default } from "fifi";
+
+function Post(msg) {
+  return {
+    "div": [
+      [
+        msg
+      ]
+    ]
+  }
+};
+
+Layout({
+  "div": [
+    [
+      [
+
+        // just make sure typeof [0] is a function
+        Post, ["Post"]
+      ]
+    ]
+  ]
+}, Default);
+```
