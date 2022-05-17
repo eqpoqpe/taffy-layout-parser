@@ -11,28 +11,24 @@
 export default function naivePresent() {
   return {
     onData: {
-      create(s) {
-        const _that = this[s] = null;
+
+      /**
+       * 
+       * @param {string|symbol} s 
+       * @param {*} value 
+       * @returns 
+       */
+      create(s, value) {
+        const _that_data = this[s] = value;
         this[`set${s}`] = function (sp) {
           if (typeof sp === "function") {
-            _that = sp(_that);
+            _that_data = sp(_that);
           } else {
-            _that = sp;
+            _that_data = sp;
           }
         };
 
         return {
-
-          /**
-           * 
-           * @param {*} s 
-           * @returns
-           */
-          value(s) {
-            _that = s;
-
-            return this;
-          },
 
           /**
            * 
@@ -43,11 +39,14 @@ export default function naivePresent() {
 
           /**
            * 
+           * state
+           * 
            * @param {{state: boolean}} options 
            * @returns 
            */
           on(options) {
-            return {};
+            return {
+            };
           }
         }
       }
@@ -60,7 +59,7 @@ export default function naivePresent() {
        * @returns {{effect: Function, on: Function}}
        */
       create(s) {
-        const _that = this[s] = {
+        const _event = this[s] = {
 
           // user defined
           _$: 1,
@@ -91,14 +90,20 @@ export default function naivePresent() {
 
           /**
            * 
+           * https://developer.mozilla.org/en-US/docs/Web/Events#event_listing
+           * 
            * @param {string} et event type 
+           * @param {{once: boolean, after: boolean}} options
            */
-          on(et) {
+          on(et, options) {
             _that.type = et;
 
             return {
-              once() { _that.once = true; },
-              after() { _that.after = true; }
+              // once() { _that.once = true; },
+
+              // // working for lifecycle
+              // // mounted
+              // after() { _that.after = true; }
             }
           },
         }
