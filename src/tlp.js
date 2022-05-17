@@ -9,4 +9,12 @@
  *    |_/_/    \_\_____\____/
  *
  * Behavior Up Normally Code Defined Here
+ * 
+ * Copyright (c) 2022 Ryan Martin
  */
+
+/**
+ * 
+ * @param {{}} tle 
+ */
+export default function (tle) {};

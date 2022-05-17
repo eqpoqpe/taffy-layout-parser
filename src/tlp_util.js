@@ -4,5 +4,4 @@
  * 
  * @returns {HTMLELement}
  */
-export function hitProot(o) {
-};
+export function hitProot(o) {};

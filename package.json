@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "build": "rollup -c",
+      "build": "rollup -c && python3 script/out.py",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Ryan Martin",

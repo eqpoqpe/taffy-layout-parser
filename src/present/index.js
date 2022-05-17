@@ -25,23 +25,22 @@ export default function naivePresent() {
        * @returns 
        */
       create(s, value) {
-        const _that_data = this[s] = value;
-        this[`set${s}`] = function (sp) {
-          if (typeof sp === "function") {
-            _that_data = sp(_that);
-          } else {
-            _that_data = sp;
-          }
-        };
+        // const _that_data = this[s] = value;
+        // this[`set${s}`] = function (sp) {
+        //   if (typeof sp === "function") {
+        //     _that_data = sp(_that);
+        //   } else {
+        //     _that_data = sp;
+        //   }
+        // };
+
+        const _that_data = new dataDefault();
 
         return {
 
           /**
            * 
-           * effect -> getter
-           * 
-           * @param {Function} p 
-           * @returns
+           * @param {Function} p when value has changed
            */
           effect(p) { },
 
