@@ -6,7 +6,13 @@
  *   | | / /\ \ |  __| |  __|   \   /
  *   | |/ ____ \| |    | |       | |
  *   |_/_/    \_\_|    |_|       |_|
+ * 
+ * Copyright (c) 2022 Ryan Martin
  */
+
+import eventDefault from "../fifi/event.default";
+import propertyDefault from "../fifi/property.default";
+import dataDefault from "../fifi/data.default";
 
 export default function naivePresent() {
   return {
@@ -32,6 +38,8 @@ export default function naivePresent() {
 
           /**
            * 
+           * effect -> getter
+           * 
            * @param {Function} p 
            * @returns
            */
@@ -46,6 +54,7 @@ export default function naivePresent() {
            */
           on(options) {
             return {
+              state() { }
             };
           }
         }
@@ -59,20 +68,7 @@ export default function naivePresent() {
        * @returns {{effect: Function, on: Function}}
        */
       create(s) {
-        const _event = this[s] = {
-
-          // user defined
-          _$: 1,
-          handle: null,
-
-          // event type
-          type: null,
-          once: false,
-
-          // after at component mounted
-          // default is before
-          after: false,
-        };
+        const _that_event = this[s] = new eventDefault();
 
         return {
 
@@ -82,7 +78,7 @@ export default function naivePresent() {
            * @param {*} fn_args 
            */
           effect(fn, ...fn_args) {
-            _that.handle = typeof fn === "function" ? fn : null;
+            _that_event.effect.fn = typeof fn === "function" ? fn : null;
 
             // @event, pure data
             if (fn_args.length > 0) { }
@@ -96,14 +92,16 @@ export default function naivePresent() {
            * @param {{once: boolean, after: boolean}} options
            */
           on(et, options) {
-            _that.type = et;
+            _that_event.__type = (typeof et === "string") ? et : null;
+
+            _that_event.options(options);
 
             return {
-              // once() { _that.once = true; },
+              once() { _that_event.__once = true; },
 
-              // // working for lifecycle
-              // // mounted
-              // after() { _that.after = true; }
+              // working for lifecycle
+              // mounted
+              after() { _that_event.__after = true; }
             }
           },
         }
