@@ -13,7 +13,7 @@ export default function naivePresent() {
     onData: {
       create(s) {
         const _that = this[s] = null;
-        this[`set${s}`] = function(sp) {
+        this[`set${s}`] = function (sp) {
           if (typeof sp === "function") {
             _that = sp(_that);
           } else {
@@ -26,21 +26,29 @@ export default function naivePresent() {
           /**
            * 
            * @param {*} s 
+           * @returns
            */
           value(s) {
             _that = s;
 
             return this;
           },
-          state() {
-            return this;
-          },
 
           /**
            * 
            * @param {Function} p 
+           * @returns
            */
-          effect(p) {}
+          effect(p) { },
+
+          /**
+           * 
+           * @param {{state: boolean}} options 
+           * @returns 
+           */
+          on(options) {
+            return {};
+          }
         }
       }
     },
@@ -77,8 +85,7 @@ export default function naivePresent() {
           effect(fn, ...fn_args) {
             _that.handle = typeof fn === "function" ? fn : null;
 
-            // @event
-            // prue data
+            // @event, pure data
             if (fn_args.length > 0) { }
           },
 
