@@ -6,4 +6,4 @@
 import os
 
 if __name__ == "__main__":
-    working_dir: string = os.getcwd()
+    working_dir = os.getcwd()

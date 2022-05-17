@@ -1,6 +1,19 @@
+const Post = {
+  "div": [
+    [
+      "&count"
+    ]
+  ]
+};
+
 export default {
   div: [
-    "@plusOne"
+    ".page",
+    "@plusOne",
+    [
+      "Page",
+      [Post, "&count"]
+    ]
   ],
   event: {
     plusOne: [
@@ -10,6 +23,19 @@ export default {
           console.log(e);
         }, "@event"
       ]
+    ],
+    Page: [
+      "!mounted",
+      [
+        (value) => {
+          console.log(e);
+        }, "&count"
+      ]
+    ]
+  },
+  data: {
+    count: [
+      [0]
     ]
   }
 };

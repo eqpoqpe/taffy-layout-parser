@@ -63,10 +63,11 @@ export default function naivePresent() {
 
       /**
        *
-       * @param {string|symbol} s
+       * @param {string|symbol} s 
+       * @param {string} type 
        * @returns {{effect: Function, on: Function}}
        */
-      create(s) {
+      create(s, type) {
         const _that_event = this[s] = new eventDefault();
 
         return {
