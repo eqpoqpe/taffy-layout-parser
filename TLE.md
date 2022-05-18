@@ -37,34 +37,3 @@
 > `8 -> fetch`
 
 > `11 -> scope`
-
-## Examples
-The Taffy's style and Fifi style.
-
-**Memoization**
-
-```js
-import { Layout, Default } from "fifi";
-
-function Post(msg) {
-  return {
-    "div": [
-      [
-        msg
-      ]
-    ]
-  }
-};
-
-Layout({
-  "div": [
-    [
-      [
-
-        // just make sure typeof [0] is a function
-        Post, ["Post"]
-      ]
-    ]
-  ]
-}, Default);
-```
