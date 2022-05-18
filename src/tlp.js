@@ -31,3 +31,18 @@ export default function (tle) {
    * +---------------------+
    */
 };
+
+export function Default() {
+  const root = document.querySelector("#page-root");
+
+  if (root === null) {
+    root = document.createElement("div");
+    
+    root.setAttribute("default", "");
+    root.setAttribute("id", "page-root");
+
+    document.body.appendChild(root);
+  }
+
+  return root;
+}
