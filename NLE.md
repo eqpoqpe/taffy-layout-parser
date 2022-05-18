@@ -1,4 +1,4 @@
-## Neon Layout Element (for fun)
+## Neon Layout Element (***jennition***)
 ```js
 import $ from "nle";
 
